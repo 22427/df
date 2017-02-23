@@ -65,9 +65,9 @@ float dist2_other_border(const Image2D& img, const glm::vec2& i,int32_t max)
 				min = std::min(min,dist2_to_pixelborder(glm::vec2(0.5f+x,0.5f+y),i));
 		}
 	if(me == 0)
-		return  -min;
+		return  -sqrtf(min);
 	else
-		return  min;
+		return  sqrtf(min);
 }
 
 
