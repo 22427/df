@@ -58,6 +58,7 @@ float dist2_other_border(const Image2D& img, const glm::vec2& i,int32_t max)
 	auto me = img.at(it.x,it.y)[0];
 
 	float min = static_cast<float>(max)*sqrtf(2.0f);
+	min *= min;
 	for(int32_t y = std::max(0,it.y-max) ; y < std::min(img.height,it.y+max); y++)
 		for(int32_t x = std::max(0,it.x-max) ; x<std::min(img.width,it.x+max); x++)
 		{
@@ -191,7 +192,7 @@ int main(int argc, char** argv)
 	float mmax = static_cast<float>(s.max_dist)*sqrtf(2.0f);
 
 
-	for(int j = 0 ; j< w*h;j++)
+	for(int j = 0 ; j< s.out_height*s.out_width;j++)
 	{
 		r[j] = static_cast<unsigned char>(255.0f * std::min(1.0f,std::max(0.0f,(0.5f+df[j]/(2.0f*mmax)))));
 	}

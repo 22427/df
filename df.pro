@@ -24,3 +24,4 @@ DESTDIR = bin
 OBJECTS_DIR = obj
 
 gcc:QMAKE_CXXFLAGS_RELEASE += -O3 -march=native -fopenmp -D_GLIBCXX_PARALLEL
+gcc:QMAKE_CXXFLAGS+= -fopenmp -D_GLIBCXX_PARALLEL
